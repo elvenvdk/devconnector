@@ -31,7 +31,7 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-    // TODO: clear current profile
+    // Clear current profile
     store.dispatch(clearCurrentProfile());
     // Redirect to login
     window.location.href = "/login";
@@ -49,7 +49,7 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact patch="/dashboard" component={Dashboard} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </div>
             <Footer />
           </div>
