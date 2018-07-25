@@ -16,8 +16,9 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <a href="" onClick={this.LogoutClick} className="nav-link">
+          <a href="" onClick={this.onLogoutClick} className="nav-link">
             <img
+              className="rounded-circle"
               src={user.avatar}
               alt={user.name}
               style={{ width: "25px", marginRight: "5px" }}
@@ -62,7 +63,6 @@ class Navbar extends Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
-                  {" "}
                   Developers
                 </Link>
               </li>
