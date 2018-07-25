@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getCurrentProfile } from "../../actions/profileActions";
 
-class dashboard extends Component {
+class Dashboard extends Component {
   componentDidMount() {
     this.props.getCurrentProfile();
   }
@@ -16,7 +16,15 @@ class dashboard extends Component {
   }
 }
 
+Dashboard.propTypes = {
+  getCurrentProfile: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  profile: state.profile
+});
+
 export default connect(
-  null,
-  getCurrentProfile
-)(dashboard);
+  mapStateToProps,
+  { getCurrentProfile }
+)(Dashboard);

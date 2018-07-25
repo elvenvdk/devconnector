@@ -24,3 +24,8 @@ export const getCurrentProfile = () => dispatch => {
 export const setProfileLoading = () => ({
   type: types.PROFILE_LOADING
 });
+
+// Clear profile
+export const clearCurrentProfile = () => ({
+  type: types.CLEAR_CURRENT_PROFILE
+});
