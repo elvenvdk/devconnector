@@ -73,7 +73,9 @@ class Register extends Component {
                 <div className="form-group">
                   <input
                     type="email"
-                    className="form-control form-control-lg"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.email
+                    })}
                     placeholder="Email Address"
                     name="email"
                     value={this.state.email}
@@ -88,7 +90,9 @@ class Register extends Component {
                 <div className="form-group">
                   <input
                     type="password"
-                    className="form-control form-control-lg"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.password
+                    })}
                     placeholder="Password"
                     name="password"
                     value={this.state.password}
@@ -99,7 +103,9 @@ class Register extends Component {
                 <div className="form-group">
                   <input
                     type="password"
-                    className="form-control form-control-lg"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.password2
+                    })}
                     placeholder="Confirm Password"
                     name="password2"
                     value={this.state.password2}
