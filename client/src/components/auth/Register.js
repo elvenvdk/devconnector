@@ -19,9 +19,7 @@ class Register extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
+    if (nextProps.errors) this.setState({ errors: nextProps.errors });
   }
 
   onChange = event => {
@@ -69,7 +67,9 @@ class Register extends Component {
                     value={this.state.name}
                     onChange={this.onChange}
                   />
-                  {<div style={{ color: "red" }}>{errors.name}</div>}
+                  {errors.name && (
+                    <div className="invalid-feedback">{errors.name}</div>
+                  )}
                 </div>
                 <div className="form-group">
                   <input
@@ -82,7 +82,9 @@ class Register extends Component {
                     value={this.state.email}
                     onChange={this.onChange}
                   />
-                  {<div style={{ color: "red" }}>{errors.email}</div>}
+                  {errors.email && (
+                    <div className="invalid-feedback">{errors.email}</div>
+                  )}
                   <small className="form-text text-muted">
                     This site uses Gravatar so if you want a profile image, use
                     a Gravatar email
@@ -99,7 +101,9 @@ class Register extends Component {
                     value={this.state.password}
                     onChange={this.onChange}
                   />
-                  {<div style={{ color: "red" }}>{errors.password}</div>}
+                  {errors.password && (
+                    <div className="invalid-feedback">{errors.password}</div>
+                  )}
                 </div>
                 <div className="form-group">
                   <input
@@ -112,7 +116,9 @@ class Register extends Component {
                     value={this.state.password2}
                     onChange={this.onChange}
                   />
-                  {<div style={{ color: "red" }}>{errors.password2}</div>}
+                  {errors.password2 && (
+                    <div className="invalid-feedback">{errors.password2}</div>
+                  )}
                 </div>
                 <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
