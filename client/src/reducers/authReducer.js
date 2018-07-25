@@ -1,11 +1,10 @@
 import * as types from "../actions/types";
+// import { Types } from "mongoose";
 
 const INITIAL_STATE = {
   isAuthenticated: false,
   user: {}
 };
-
-let newState = {};
 
 const authReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
