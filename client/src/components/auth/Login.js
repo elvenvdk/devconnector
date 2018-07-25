@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import classnames from "classnames";
 
 import { loginUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
@@ -57,18 +56,18 @@ class Login extends Component {
               </p>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
+                  name="email"
                   type="email"
                   error={errors.email}
                   placeholder="Email Address"
-                  name="email"
                   value={this.state.email}
                   onChange={this.onChange}
                 />
                 <TextFieldGroup
+                  name="password"
                   type="password"
                   error={errors.password}
                   placeholder="Password"
-                  name="password"
                   value={this.state.password}
                   onChange={this.onChange}
                 />
