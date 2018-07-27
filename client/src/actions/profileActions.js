@@ -20,6 +20,19 @@ export const getCurrentProfile = () => dispatch => {
     );
 };
 
+// Create Profile
+export const createProfile = (profileData, history) => dispatch => {
+  axios
+    .post("/api/profile", profileData)
+    .then(result => history.push("/dashboard"))
+    .catch(err =>
+      dispatch({
+        type: types.GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 // Profile loading
 export const setProfileLoading = () => ({
   type: types.PROFILE_LOADING
