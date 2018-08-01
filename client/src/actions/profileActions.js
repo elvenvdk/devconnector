@@ -115,6 +115,25 @@ export const deleteAccount = () => dispatch => {
   }
 };
 
+// Get all profiles
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get("/api/profile/all")
+    .then(res =>
+      dispatch({
+        type: types.GET_PROFILES,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: types.GET_ERRORS,
+        payload: null
+      })
+    );
+};
+
 // Profile loading
 export const setProfileLoading = () => ({
   type: types.PROFILE_LOADING
